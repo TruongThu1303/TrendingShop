@@ -25,20 +25,67 @@
                 </div>
                 <!--begin::Form-->
                 <form method="POST" action="">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label>Tên danh mục</label>
-                            <input type="text" name="name" class="form-control" placeholder="Nhập vào tên danh mục" value="<?php echo $category['name'] ?>" />
-                            <!-- <span class="form-text text-muted">We'll never share your email with anyone else.</span> -->
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col col-12">
+                            <div class="form-group">
+                                <label>Tiêu đề sản phẩm</label>
+                                <input type="text" name="title" class="form-control" placeholder="Nhập vào tiêu đề sản phẩm" value="<?php echo $production['title'] ?>" />
+                            </div>
+                            <div class="form-group">
+                                <label>Danh mục sản phẩm</label>
+                              
+                                <select name="category_id" >
+                                    <!-- <option value="">Chọn danh mục</option> -->
+                                    <?php 
+                                    foreach ($categories as $category){
+                                        if($production['category_id'] == $category['id']){
+                                            echo '<option value="'.$category['id'].'" selected >'.$category['name'].'</option>';
+                                        }
+                                        else {
+                                            echo '<option value="'.$category['id'].'"  >'.$category['name'].'</option>';
+                                        }
+                                    }
+
+
+                                    ?>
+                                    
+                                </select>
+                            <div class="form-group mb-1">
+                                <label for="descriptionCategoryInput">Chi tiết sản phẩm</label>
+                                <textarea name="description" id="kt-ckeditor-1" ><?php echo $production['description'] ?></textarea>
+                            </div>
                         </div>
-                        <div class="form-group mb-1">
-                            <label for="descriptionCategoryInput">Mô tả danh mục</label>
-                            <textarea name="description" class="form-control" id="descriptionCategoryInput" rows="3"><?php echo $category['description'] ?></textarea>
+                        <div class="col col-4 mt-3">
+                            <div class="form-group">
+                                <label>Số lượng trong kho</label>
+                                <input type="number" name="count" class="form-control" placeholder="Nhập vào số lượng" value="<?php echo $production['count'] ?>" />
+                            </div>
+                        </div>
+                        <div class="col col-4 mt-3">
+                            <div class="form-group">
+                                <label>Giá cho mỗi sản phẩm</label>
+                                <div class="input-group">
+                                    <input type="text" name="price" class="form-control" placeholder="Giá cho mỗi sản phẩm" aria-describedby="basic-addon2" value="<?php echo $production['price'] ?>"/>
+                                    <div class="input-group-append"><span class="input-group-text">VND</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-4 mt-3">
+                            <div class="form-group">
+                                <label>Trạng thái sản phẩm</label>
+                                <select class="form-control select2" name="status" value="<?php echo $production['status'] ?>">
+                                    <option value="1">Nháp</option>
+                                    <option value="2">Công khai</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
+                </div>
+                    
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary mr-2">Chỉnh sửa</button>
-                        <a href="/?role=admin&mod=category" class="btn btn-default">Quay về</a>
+                        <button type="submit" class="btn btn-primary mr-2">Lưu</button>
+                        <a href="?role=admin&mod=production" class="btn btn-default">Quay về</a>
                     </div>
                 </form>
                 <!--end::Form-->

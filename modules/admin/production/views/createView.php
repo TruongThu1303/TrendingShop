@@ -24,13 +24,13 @@
                 <h3 class="card-title">Form thông tin sản phẩm mới</h3>
             </div>
             <!--begin::Form-->
-            <form method="POST" action="">
+            <form method="POST" action="" enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="row">
                         <div class="col col-12">
                             <div class="form-group">
                                 <label>Tiêu đề sản phẩm</label>
-                                <input type="text" name="name" class="form-control" placeholder="Nhập vào tiêu đề sản phẩm" />
+                                <input type="text" name="title" class="form-control" placeholder="Nhập vào tiêu đề sản phẩm" />
                             </div>
                             <div class="form-group">
                                 <label>Danh mục sản phẩm</label>
@@ -89,11 +89,8 @@
                         </div>
                         <div class="col col-9">
                             <div><label>Hình ảnh sản phẩm</label></div>
-                            <div class="dropzone dropzone-default dropzone-primary" id="kt_dropzone_3">
-                                <div class="dropzone-msg dz-message needsclick">
-                                    <h3 class="dropzone-msg-title">Kéo thả hình ảnh cần upload</h3>
-                                    <span class="dropzone-msg-desc">Chỉ chấp nhận tải lên file hình ảnh</span>
-                                </div>
+                            <div class="dropzone dropzone-default dropzone-primary" id="kt_dropzone_3" >
+                                    <input type="file" name="img">
                             </div>
                         </div>
                     </div>
@@ -101,7 +98,7 @@
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary mr-2">Tạo mới</button>
                     <button type="reset" class="btn btn-secondary">Làm lại</button>
-                    <a href="/?role=admin&mod=category" class="btn btn-default">Quay về</a>
+                    <a href="?role=admin&mod=production" class="btn btn-default">Quay về</a>
                 </div>
             </form>
             <!--end::Form-->

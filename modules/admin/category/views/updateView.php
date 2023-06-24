@@ -37,8 +37,8 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary mr-2">Chỉnh sửa</button>
-                        <a href="/?role=admin&mod=category" class="btn btn-default">Quay về</a>
+                        <button type="submit" class="btn btn-primary mr-2">Lưu</button>
+                        <a href="?role=admin&mod=category" class="btn btn-default">Quay về</a>
                     </div>
                 </form>
                 <!--end::Form-->
